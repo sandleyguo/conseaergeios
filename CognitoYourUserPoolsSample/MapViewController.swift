@@ -220,6 +220,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded() })
             self.view.layoutIfNeeded()
         }
+        paymentAppear = !paymentAppear
     }
     
     func bookItMenuDisappear() {

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CognitoYourUserPoolsSample.xcodeproj">
+      location = "group:/Users/sandley/Documents/aws-sdk-ios-samples-master/CognitoYourUserPools-Sample/Swift/Conseaerge.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

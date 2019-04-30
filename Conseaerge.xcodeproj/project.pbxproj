@@ -41,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17FC2F7C1E258FC500174015 /* CognitoYourUserPoolsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognitoYourUserPoolsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17FC2F7C1E258FC500174015 /* Conseaerge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conseaerge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FC2F7F1E258FC500174015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FC2F841E258FC500174015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17FC2F861E258FC500174015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		17FC2F7D1E258FC500174015 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17FC2F7C1E258FC500174015 /* CognitoYourUserPoolsSample.app */,
+				17FC2F7C1E258FC500174015 /* Conseaerge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17FC2F7B1E258FC500174015 /* CognitoYourUserPoolsSample */ = {
+		17FC2F7B1E258FC500174015 /* Conseaerge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17FC2F8E1E258FC500174015 /* Build configuration list for PBXNativeTarget "CognitoYourUserPoolsSample" */;
+			buildConfigurationList = 17FC2F8E1E258FC500174015 /* Build configuration list for PBXNativeTarget "Conseaerge" */;
 			buildPhases = (
 				2A6F4D1C912A849202344013 /* [CP] Check Pods Manifest.lock */,
 				17FC2F781E258FC500174015 /* Sources */,
@@ -188,9 +188,9 @@
 			);
 			dependencies = (
 			);
-			name = CognitoYourUserPoolsSample;
+			name = Conseaerge;
 			productName = CognitoYourUserPoolsSample;
-			productReference = 17FC2F7C1E258FC500174015 /* CognitoYourUserPoolsSample.app */;
+			productReference = 17FC2F7C1E258FC500174015 /* Conseaerge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17FC2F771E258FC500174015 /* Build configuration list for PBXProject "CognitoYourUserPoolsSample" */;
+			buildConfigurationList = 17FC2F771E258FC500174015 /* Build configuration list for PBXProject "Conseaerge" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -223,7 +223,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17FC2F7B1E258FC500174015 /* CognitoYourUserPoolsSample */,
+				17FC2F7B1E258FC500174015 /* Conseaerge */,
 			);
 		};
 /* End PBXProject section */
@@ -466,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17FC2F771E258FC500174015 /* Build configuration list for PBXProject "CognitoYourUserPoolsSample" */ = {
+		17FC2F771E258FC500174015 /* Build configuration list for PBXProject "Conseaerge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17FC2F8C1E258FC500174015 /* Debug */,
@@ -475,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17FC2F8E1E258FC500174015 /* Build configuration list for PBXNativeTarget "CognitoYourUserPoolsSample" */ = {
+		17FC2F8E1E258FC500174015 /* Build configuration list for PBXNativeTarget "Conseaerge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17FC2F8F1E258FC500174015 /* Debug */,
