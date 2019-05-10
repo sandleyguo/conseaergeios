@@ -99,8 +99,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         carModel.dataSource = self
         carModel.delegate = self
         
-        //timePicker()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -181,24 +179,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         return ""
     }
     
-    /*
-    func timePicker() {
-        dropOffPicker.datePickerMode = .time // setting mode to timer so user can only pick time as you want
-        pickUpPicker.datePickerMode = .time
-        dropOffPicker.minuteInterval = 15
-        pickUpPicker.minuteInterval = 15
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "HH:mm"
-        
-        var pickUpRestrict = dropOffPicker.DateFo
-        
-        //let min = dateFormatter.date(from: "9:00")      //createing min time
-        let min = dateFormatter.date(from: pickUpRestrict)
-        let max = dateFormatter.date(from: "21:00") //creating max time
-        pickUpPicker.minimumDate = min  //setting min time to picker
-        pickUpPicker.maximumDate = max  //setting max time to picker
-    } */
-    
     @IBAction func menuButton(_ sender: Any) {
         if (menuAppear) {
             menuDisappear()
@@ -219,9 +199,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
     @IBAction func allParkingButton(_ sender: Any) {
         bookItMenuDisappear()
         bookItAppear = !bookItAppear
-        
-        //DELETE
-        //let dropPicker = dropOffPicker.date
         dropOffMenuAppear()
     }
     
@@ -381,9 +358,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         menuDisappear()
         menuAppear = !menuAppear
         self.user?.signOut()
-        //self.title = nil
         self.response = nil
-        //self.tableView.reloadData()
         self.refresh()
     }
 
@@ -391,8 +366,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         self.user?.getDetails().continueOnSuccessWith { (task) -> AnyObject? in
             DispatchQueue.main.async(execute: {
                 self.response = task.result
-                //self.title = self.user?.username
-                //self.tableView.reloadData()
             })
             return nil
         }

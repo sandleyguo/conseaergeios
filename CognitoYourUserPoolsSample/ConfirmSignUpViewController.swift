@@ -9,7 +9,6 @@ import AWSCognitoIdentityProvider
 
 class ConfirmSignUpViewController : UIViewController {
     
-    //var sentTo: String?
     var user: AWSCognitoIdentityUser?
     
     @IBOutlet weak var sentToLabel: UILabel!
@@ -48,17 +47,13 @@ class ConfirmSignUpViewController : UIViewController {
                     
                     strongSelf.present(alertController, animated: true, completion:  nil)
                 } else {
-                    //let _ = strongSelf.navigationController?.popToRootViewController(animated: true)
-                    //TODO: CONFIRM BACK TO SIGN IN
                     let alertController = UIAlertController(title: "Account Verified",
                                                             message: "Your account has been verified.",
                                                             preferredStyle: .alert)
-                    //let okAction = UIAlertAction(title: "Log In", style: .default, handler: {action in strongSelf.performSegue(withIdentifier: "loginSegue", sender: sender)} )
                     let okAction = UIAlertAction(title: "Log In", style: .default, handler: {action in let _ = strongSelf.navigationController?.popToRootViewController(animated: true)} )
                     alertController.addAction(okAction)
                     
                     self?.present(alertController, animated: true, completion:  nil)
-                    //let _ = strongSelf.navigationController?.popToRootViewController(animated: true)
                 }
             })
             return nil

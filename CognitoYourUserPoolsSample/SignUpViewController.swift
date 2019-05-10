@@ -12,8 +12,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     var pool: AWSCognitoIdentityUserPool?
     var sentTo: String?
     
-    //@IBOutlet weak var username: UITextField!
-    
     @IBOutlet weak var givenName: TextFieldPaddingExtension!
     @IBOutlet weak var familyName: TextFieldPaddingExtension!
     @IBOutlet weak var email: TextFieldPaddingExtension!

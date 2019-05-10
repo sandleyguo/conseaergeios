@@ -53,7 +53,6 @@ class ConfirmForgotPasswordViewController: UIViewController {
                     alertController.addAction(okAction)
                     
                     self?.present(alertController, animated: true, completion:  nil)
-                    //let _ = strongSelf.navigationController?.popToRootViewController(animated: true)
                 }
             })
             return nil
