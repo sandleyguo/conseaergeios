@@ -11,7 +11,7 @@ import CoreLocation
 import UIKit
 import AWSCognitoIdentityProvider
 
-class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var navMenu: UIView!
     @IBOutlet weak var searchField: UITextField!
@@ -22,6 +22,11 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
     @IBOutlet weak var pickUpLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var dropOffLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var paymentLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var carLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dropOffPicker: UIDatePicker!
+    @IBOutlet weak var pickUpPicker: UIDatePicker!
+    @IBOutlet weak var carMake: UIPickerView!
+    @IBOutlet weak var carModel: UIPickerView!
     
     @IBOutlet weak var mapView: MKMapView!
 
@@ -36,6 +41,10 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
     var dropOffAppear = false
     var pickUpAppear = false
     var paymentAppear = false
+    var carAppear = false
+    
+    var modelList: [String] = [String]()
+    var makeList: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +91,18 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         swipeDown.direction = UISwipeGestureRecognizer.Direction.down
         self.view.addGestureRecognizer(swipeLeft)
         self.view.addGestureRecognizer(swipeDown)
+        
+        modelData()
+        makeData()
+        
+        carMake.dataSource = self
+        carMake.delegate = self
+        
+        carModel.dataSource = self
+        carModel.delegate = self
+        
+        //timePicker()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,23 +144,71 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         
         if let annotation = view.annotation {
             print("Your annotation title: \(annotation.title)");
-            //bookItAppear = !bookItAppear
             bookItMenuAppear()
         }
     }
     
+    func modelData() {
+        modelList = ["4Runner", "Auris", "Auris Touring Sports", "Avensis", "Avensis Touring Sports", "Avensis Verso", "Avensis Wagon", "Aygo", "C-HR", "Camry", "Camry Customwagon", "Camry Stationwagon", "Carina", "Carina Combi", "Carina E", "Carina E Stationwagon", "Carina II", "Carina II Stationwagon", "Celica", "Celica Convertible", "Celica Coupe", "Celica Liftback", "Corolla", "Corolla Combi", "Corolla Coupe", "Corolla Liftback", "Corolla Stationwagon", "Corolla Verso", "Corolla Wagon", "Corona", "Cressida", "Cressida Combi", "Cressida Hardtop", "Crown", "Crown Combi", "Funcruiser", "Funcruiser Hardtop", "Funcruiser Softtop", "Funcruiser Wagon", "GT86", "Hilux", "Hilux Dubbele Cabine", "iQ", "Land Cruiser",  "MR2", "Paseo", "Picnic", "Previa", "Prius",  "Proace Shuttle", "RAV4", "Starlet", "Starlet Combi", "Supra", "Tercel", "Urban Cruiser", "Verso", "Yaris"]
+    }
+    
+    func makeData() {
+        makeList = ["Abarth", "Alfa Romeo", "Asia Motors", "Aston Martin", "Audi", "Austin", "Autobianchi", "Bentley", "BMW", "Bugatti", "Buick", "Cadillac", "Carver", "Chevrolet", "Chrysler", "Citroen", "Corvette", "Dacia", "Daewoo", "Daihatsu", "Daimler", "Datsun", "Dodge", "Donkervoort", "DS", "Ferrari", "Fiat", "Fisker", "Ford", "FSO", "Galloper", "Honda", "Hummer", "Hyundai", "Infiniti", "Innocenti", "Jaguar", "Jeep", "Josse", "Kia", "Lada", "Lamborghini", "Lancia", "Land Rover", "Landwind", "Lexus", "Lincoln", "Lotus", "Marcos", "Maserati", "Maybach", "Mazda", "McLaren", "Mega", "Mercedes", "Mercury", "MG", "Mini", "Mitsubishi", "Morgan", "Morris", "Nissan", "Noble", "Opel", "Peugeot", "PGO", "Pontiac", "Porsche", "Princess", "Renault", "Rolls-Royce", "Rover", "Saab", "Seat", "Skoda", "Smart", "Spectre", "SsangYong",  "Subaru", "Suzuki", "Talbot", "Tesla", "Think", "Toyota", "Triumph", " TVR", " Volkswagen", "Volvo", "Yugo", "Others"]
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        var countrows : Int = modelList.count
+        if pickerView == carMake {
+            countrows = self.makeList.count
+        }
+        
+        return countrows
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        //return modelList[row]
+        
+        if pickerView == carModel {
+            let titleRow = modelList[row]
+            return titleRow
+        } else if pickerView == carMake {
+            let titleRow = makeList[row]
+            return titleRow
+        }
+        
+        return ""
+    }
+    
+    /*
+    func timePicker() {
+        dropOffPicker.datePickerMode = .time // setting mode to timer so user can only pick time as you want
+        pickUpPicker.datePickerMode = .time
+        dropOffPicker.minuteInterval = 15
+        pickUpPicker.minuteInterval = 15
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "HH:mm"
+        
+        var pickUpRestrict = dropOffPicker.DateFo
+        
+        //let min = dateFormatter.date(from: "9:00")      //createing min time
+        let min = dateFormatter.date(from: pickUpRestrict)
+        let max = dateFormatter.date(from: "21:00") //creating max time
+        pickUpPicker.minimumDate = min  //setting min time to picker
+        pickUpPicker.maximumDate = max  //setting max time to picker
+    } */
+    
     @IBAction func menuButton(_ sender: Any) {
         if (menuAppear) {
-            //navLeadingConstraint.constant = -315
-            //UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded() })
-            //greyLeadingConstraint.constant = -414
             menuDisappear()
         } else {
             navLeadingConstraint.constant = 0
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded() })
             greyLeadingConstraint.constant = 0
         }
-        
         menuAppear = !menuAppear
     }
     
@@ -152,6 +221,9 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
     @IBAction func allParkingButton(_ sender: Any) {
         bookItMenuDisappear()
         bookItAppear = !bookItAppear
+        
+        //DELETE
+        //let dropPicker = dropOffPicker.date
         dropOffMenuAppear()
     }
     
@@ -161,9 +233,15 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         pickUpMenuAppear()
     }
     
-    @IBAction func toPaymentButton(_ sender: Any) {
+    @IBAction func toCarButton(_ sender: Any) {
         pickUpMenuDisappear()
         pickUpAppear = !pickUpAppear
+        carMenuAppear()
+    }
+    
+    @IBAction func toPaymentButton(_ sender: Any) {
+        carMenuDisappear()
+        carAppear = !carAppear
         paymentMenuAppear()
     }
     
@@ -171,7 +249,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         paymentMenuDisappear()
         paymentAppear = !paymentAppear
     }
-    
     
     func menuDisappear() {
         navLeadingConstraint.constant = -315
@@ -212,6 +289,17 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         pickUpAppear = !pickUpAppear
     }
     
+    func carMenuAppear() {
+        if (carAppear) {
+            carMenuDisappear()
+        } else {
+            carLeadingConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded() })
+            self.view.layoutIfNeeded()
+        }
+        carAppear = !carAppear
+    }
+    
     func paymentMenuAppear() {
         if (paymentAppear) {
             paymentMenuDisappear()
@@ -241,6 +329,11 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         greyLeadingConstraint.constant = -414
     }
     
+    func carMenuDisappear() {
+        carLeadingConstraint.constant = -414
+        self.view.layoutIfNeeded()
+    }
+    
     func paymentMenuDisappear() {
         paymentLeadingConstraint.constant = -414
         self.view.layoutIfNeeded()
@@ -250,15 +343,9 @@ class MapViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizer.Direction.left:
-                //navLeadingConstraint.constant = -315
-                //UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded() })
-                //greyLeadingConstraint.constant = -414
                 menuDisappear()
                 menuAppear = !menuAppear
             case UISwipeGestureRecognizer.Direction.down:
-                //navLeadingConstraint.constant = -315
-                //UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: { self.view.layoutIfNeeded() })
-                //greyLeadingConstraint.constant = -414
                 bookItMenuDisappear()
                 bookItAppear = !bookItAppear
                 dropOffMenuDisappear()

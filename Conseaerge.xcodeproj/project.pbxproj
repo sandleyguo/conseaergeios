@@ -37,7 +37,9 @@
 		19BF61B52272D54700DC32FF /* CurrentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BF61B32272D54700DC32FF /* CurrentLocation.png */; };
 		19BF61B62272D54700DC32FF /* MenuAlt.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BF61B42272D54700DC32FF /* MenuAlt.png */; };
 		19BF61B82272D54E00DC32FF /* LocationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BF61B72272D54E00DC32FF /* LocationIcon.png */; };
+		19BFE8782280826000C9C567 /* SearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BFE8772280826000C9C567 /* SearchBarExtension.swift */; };
 		19E4ED66226FE94700B37BA3 /* BackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 19E4ED65226FE94700B37BA3 /* BackArrow.png */; };
+		19FEB6182280C22E003A56EA /* ProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FEB6172280C22D003A56EA /* ProfilePicture.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +74,9 @@
 		19BF61B32272D54700DC32FF /* CurrentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CurrentLocation.png; path = Images/CurrentLocation.png; sourceTree = "<group>"; };
 		19BF61B42272D54700DC32FF /* MenuAlt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuAlt.png; path = Images/MenuAlt.png; sourceTree = "<group>"; };
 		19BF61B72272D54E00DC32FF /* LocationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LocationIcon.png; path = Images/LocationIcon.png; sourceTree = "<group>"; };
+		19BFE8772280826000C9C567 /* SearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarExtension.swift; sourceTree = "<group>"; };
 		19E4ED65226FE94700B37BA3 /* BackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackArrow.png; path = Images/BackArrow.png; sourceTree = "<group>"; };
+		19FEB6172280C22D003A56EA /* ProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProfilePicture.png; path = Images/ProfilePicture.png; sourceTree = "<group>"; };
 		2D8C9B52DE415302BA7B152A /* Pods-CognitoYourUserPoolsSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoYourUserPoolsSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CognitoYourUserPoolsSample/Pods-CognitoYourUserPoolsSample.release.xcconfig"; sourceTree = "<group>"; };
 		AB8F26771F0FF8105FC402DD /* Pods_CognitoYourUserPoolsSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CognitoYourUserPoolsSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEB9BB4F88788184F7DD583 /* Pods-CognitoYourUserPoolsSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CognitoYourUserPoolsSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CognitoYourUserPoolsSample/Pods-CognitoYourUserPoolsSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				17FC2F7F1E258FC500174015 /* AppDelegate.swift */,
 				17FC2F9A1E259E0500174015 /* Constants.swift */,
 				17FC2F831E258FC500174015 /* Main.storyboard */,
+				19BFE8772280826000C9C567 /* SearchBarExtension.swift */,
 				1904BFC1226E517300FA5CE3 /* TextFieldPaddingExtension.swift */,
 				196C68B9226E38FA00A62662 /* SocialLoginExtension.swift */,
 				1904BFBD226E421F00FA5CE3 /* CheckBoxExtension.swift */,
@@ -139,6 +144,7 @@
 		17FC2F931E25909300174015 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19FEB6172280C22D003A56EA /* ProfilePicture.png */,
 				198F0ED3227369E4001B6E76 /* CreditCard.png */,
 				198F0ECD22734CA6001B6E76 /* AllPackage.png */,
 				198F0ECE22734CA6001B6E76 /* ParkingPackage.png */,
@@ -235,6 +241,7 @@
 			files = (
 				198F0ECF22734CA6001B6E76 /* AllPackage.png in Resources */,
 				1904BFC8226E556800FA5CE3 /* ConseaergeLogo_White.png in Resources */,
+				19FEB6182280C22E003A56EA /* ProfilePicture.png in Resources */,
 				1904BFC6226E53EA00FA5CE3 /* ScreenBackground.png in Resources */,
 				19E4ED66226FE94700B37BA3 /* BackArrow.png in Resources */,
 				17FC2F8A1E258FC500174015 /* LaunchScreen.storyboard in Resources */,
@@ -312,6 +319,7 @@
 				1904BFBE226E421F00FA5CE3 /* CheckBoxExtension.swift in Sources */,
 				17FC2F991E25940900174015 /* SignInViewController.swift in Sources */,
 				17FC2F971E25928900174015 /* MFAViewController.swift in Sources */,
+				19BFE8782280826000C9C567 /* SearchBarExtension.swift in Sources */,
 				17FC2FA71E25A9A200174015 /* DevicesDetailTableViewController.swift in Sources */,
 				17FC2F801E258FC500174015 /* AppDelegate.swift in Sources */,
 				19BF61B22272779E00DC32FF /* MapViewController.swift in Sources */,
