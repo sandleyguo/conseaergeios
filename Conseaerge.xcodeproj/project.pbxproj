@@ -117,8 +117,8 @@
 			children = (
 				17FC2F941E2590D800174015 /* MFAViewController.xib */,
 				17FC2F7F1E258FC500174015 /* AppDelegate.swift */,
-				17FC2F9A1E259E0500174015 /* Constants.swift */,
 				17FC2F831E258FC500174015 /* Main.storyboard */,
+				17FC2F9A1E259E0500174015 /* Constants.swift */,
 				19BFE8772280826000C9C567 /* SearchBarExtension.swift */,
 				1904BFC1226E517300FA5CE3 /* TextFieldPaddingExtension.swift */,
 				196C68B9226E38FA00A62662 /* SocialLoginExtension.swift */,

@@ -1,11 +1,8 @@
 //
 //  SearchBarExtension.swift
-//  ConSEAerge
-//
-//  Created by Sandley Guo on 2/4/19.
+//  Conseaerge
 //  Copyright © 2019 Sandley Guo. All rights reserved.
 //
-
 import UIKit
 
 class SearchBarExtension: UIImageView {

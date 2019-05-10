@@ -1,11 +1,8 @@
 //
 //  CheckBoxExtension.swift
-//  ConSEAerge
+//  Conseaerge
+//  Copyright © 2019 Sandley Guo. All rights reserved.
 //
-//  Created by Sandley Guo on 12/17/18.
-//  Copyright © 2018 Sandley Guo. All rights reserved.
-//
-
 import UIKit
 
 class CheckBoxExtension: UIButton {

@@ -1,11 +1,8 @@
 ///
 //  TextFieldPaddingExtension.swift
-//  ConSEAerge
-//
-//  Created by Sandley Guo on 1/23/19.
+//  Conseaerge
 //  Copyright © 2019 Sandley Guo. All rights reserved.
 //
-
 import UIKit
 
 class TextFieldPaddingExtension: UITextField {

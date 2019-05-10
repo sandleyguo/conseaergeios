@@ -1,9 +1,7 @@
 //
 //  MapViewController.swift
-//  ConSEAerge
-//
-//  Created by Sandley Guo on 12/17/18.
-//  Copyright © 2018 Sandley Guo. All rights reserved.
+//  Conseaerge
+//  Copyright © 2019 Sandley Guo. All rights reserved.
 //
 
 import MapKit
